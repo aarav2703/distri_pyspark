@@ -1,0 +1,22 @@
+@"
+# data
+data/raw/
+data/bronze/
+data/silver/
+data/gold/
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.env
+
+# spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# outputs
+reports/
+"@ | Set-Content -Encoding UTF8 ".gitignore"
