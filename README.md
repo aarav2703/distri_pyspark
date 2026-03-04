@@ -154,9 +154,3 @@ The experiment is simulated, but it still checks the two things that matter in r
 * **Event-Level vs. Session-Level Funnels:** Raw event-level funnels often hallucinate drop-offs (e.g., a user triggers a 'purchase' event without a recorded 'cart' event due to telemetry packet drops). I enforced sessionization first to provide a robust, stateful denominator for conversion rates.
 * **Sample Ratio Mismatch (SRM):** In the simulated A/B test assignment, I implemented an explicit chi-squared test for SRM. If the hash-based traffic split deviates significantly from the expected 50/50 allocation, the pipeline flags the experiment readout as invalid rather than silently reporting lift.
 
-## Resume-ready summary
-Distributed Product Analytics & Experimentation Platform | PySpark, DuckDB, SQL
-
-* Built a lakehouse-style analytics pipeline processing 67.4M e-commerce events in PySpark, producing partitioned Parquet layers and a sessionized fact table (13.8M sessions).
-* Modeled warehouse-style SQL marts in DuckDB for session funnels and weekly cohort retention, enabling reproducible KPI reporting.
-* Implemented an A/B experimentation readout with deterministic assignment, SRM checks, and lift + 95% CI for conversion-rate evaluation.
